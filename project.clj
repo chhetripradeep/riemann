@@ -91,6 +91,7 @@
                    :opsgenie :opsgenie
                    :boundary :boundary
                    :prometheus :prometheus
+                   :rocket :rocket
                    :elasticsearch :elasticsearch
                    :netuitive :netuitive
                    :kafka :kafka

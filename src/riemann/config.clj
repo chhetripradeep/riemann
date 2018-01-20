@@ -41,6 +41,7 @@
                      [sns         :refer [sns-publisher]]
                      [stackdriver :refer [stackdriver]]
                      [prometheus  :refer [prometheus]]
+                     [rocket      :refer [rocket]]
                      [elasticsearch :refer [elasticsearch
                                             default-bulk-formatter
                                             elasticsearch-bulk]]
@@ -182,19 +183,19 @@
   (kafka-consumer {:consumer.config {:bootstrap.servers \"localhost:9092\"
                                      :group.id \"riemann\"}
                    :topics [\"riemann\"]})
- 
+
   Options:
-   
+
   For a full list of :consumer.config options see the kafka consumer docs.
   NOTE: The :enable.auto.commit option is ignored and defaults to true.
 
-  :consumer.config      Consumer configuration 
+  :consumer.config      Consumer configuration
     :bootstrap.servers  Bootstrap configuration, default is \"localhost:9092\"
     :group.id           Consumer group id, default is \"riemann\"
   :topics               Topics to consume from, default is [\"riemann\"]
-  :key.deserializer     Key deserializer function, defaults to the 
+  :key.deserializer     Key deserializer function, defaults to the
                         keyword-deserializer.
-  :value.deserializer   Value deserializer function, defaults to 
+  :value.deserializer   Value deserializer function, defaults to
                         json-deserializer.
   :poll.timeout.ms      Polling timeout, default is 100."
 
